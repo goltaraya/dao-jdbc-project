@@ -91,4 +91,8 @@ public class Seller implements Serializable {
 				+ baseSalary + "]";
 	}
 
+	public Department getDepartment() {
+		return department;
+	}
+
 }
