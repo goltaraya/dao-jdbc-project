@@ -68,6 +68,14 @@ public class Seller implements Serializable {
 		this.name = name;
 	}
 
+	public Department getDepartment() {
+		return department;
+	}
+
+	public void setDepartment(Department department) {
+		this.department = department;
+	}
+
 	@Override
 	public int hashCode() {
 		return Objects.hash(id);
@@ -89,10 +97,6 @@ public class Seller implements Serializable {
 	public String toString() {
 		return "Seller [id=" + id + ", name=" + name + ", email=" + email + ", birthDate=" + birthDate + ", baseSalary="
 				+ baseSalary + "]";
-	}
-
-	public Department getDepartment() {
-		return department;
 	}
 
 }
