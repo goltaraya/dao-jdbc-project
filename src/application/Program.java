@@ -35,15 +35,20 @@ public class Program {
 
 		// TEST 4
 		System.out.println("\n===== TEST 4: insert =====");
-		Seller newSeller = new Seller(null, "Yago Alexandre", "yago@gmail.com", new Date(), 1000.0, dep);
+		Seller newSeller = new Seller(null, "Robert Jonson", "robert@gmail.com", new Date(), 1000.0, dep);
 		sellerDao.insert(newSeller);
 		System.out.println("New ID: " + newSeller.getId());
 		
 		// TEST 5
 		System.out.println("\n===== TEST 5: update =====");
-		seller = new Seller(2, "Yago Alexandre", "yago@gmail.com", new Date(), 1000.0, dep);
+		seller = new Seller(2, "Yago Alexandre", "mail@mail.com", new Date(), 1000.0, dep);
 		sellerDao.update(seller);
 		System.out.println("Update done!");
 		
+		// TEST 6 
+		System.out.println("\n===== TEST 6: delete =====");
+		int id = 3;
+		sellerDao.deleteById(id);
+		System.out.println("Done! Id: " + id + " deleted.");
 	}
 }
