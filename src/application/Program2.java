@@ -27,5 +27,11 @@ public class Program2 {
 		Department newDepartment = new Department(null, "Design");
 		departmentDao.insert(newDepartment);
 		System.out.println("Department: " + newDepartment.getName() + ", Id: " + newDepartment.getId());
+
+		// TEST 4
+		System.out.println("\n===== TEST 4: department update =====");
+		department = departmentDao.findById(7);
+		department.setName("Hotel");
+		departmentDao.update(department);
 	}
 }
