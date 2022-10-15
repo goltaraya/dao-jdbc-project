@@ -60,7 +60,7 @@ public class DepartmentDaoJDBC implements DepartmentDao {
 			st.setInt(2, obj.getId());
 
 			int rowsAffected = st.executeUpdate();
-			
+
 			if (rowsAffected > 0) {
 				System.out.println("Update done! Rows affected: " + rowsAffected);
 			} else {
@@ -76,7 +76,19 @@ public class DepartmentDaoJDBC implements DepartmentDao {
 
 	@Override
 	public void deleteById(Integer id) {
-		// TODO Auto-generated method stub
+		PreparedStatement st = null;
+
+		try {
+			st = conn.prepareStatement("DELETE FROM department WHERE Id = ?");
+			st.setInt(1, id);
+
+			int rowsAffected = st.executeUpdate();
+			System.out.println("Done! Rows affected: " + rowsAffected);
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			DB.closeStatement(st);
+		}
 
 	}
 

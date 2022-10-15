@@ -25,7 +25,7 @@ public class Program2 {
 		// TEST 3
 		System.out.println("\n===== TEST 3: department insert =====");
 		Department newDepartment = new Department(null, "Design");
-		departmentDao.insert(newDepartment);
+//		departmentDao.insert(newDepartment);
 		System.out.println("Department: " + newDepartment.getName() + ", Id: " + newDepartment.getId());
 
 		// TEST 4
@@ -33,5 +33,9 @@ public class Program2 {
 		department = departmentDao.findById(7);
 		department.setName("Hotel");
 		departmentDao.update(department);
+		
+		// TEST 5
+		System.out.println("\n===== TEST 5: department delete =====");
+		departmentDao.deleteById(8);
 	}
 }
