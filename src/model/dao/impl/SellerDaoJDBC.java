@@ -93,6 +93,8 @@ public class SellerDaoJDBC implements SellerDao {
 
 		} catch (SQLException e) {
 			e.printStackTrace();
+		} finally {
+			DB.closeStatement(st);
 		}
 
 	}
